@@ -3,24 +3,35 @@
   "version": "6.2.1",
   "devDependencies": {
     "babel-core": "^5.6.15",
+    "babel-eslint": "^3.1.23",
     "babel-loader": "^5.2.2",
     "css-loader": "^0.15.1",
+    "eslint": "^0.24.1",
+    "eslint-plugin-react": "^2.7.1",
     "event-stream": "^3.3.1",
     "exports-loader": "^0.6.2",
     "expose-loader": "^0.7.0",
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.6.0",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.2.0",
+    "react-hot-loader": "^1.2.8",
     "sass-loader": "^1.0.2",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",
-    "webpack": "^1.10.0"
+    "webpack": "^1.10.0",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config webpack-dev-server.config.js  --hot --devtool eval-source  --progress --colors --content-base build",
+    "dev": "node server",
+    "deploy": "webpack -p --config webpack-deploy.config.js"
   },
   "author": "james ",
   "dependencies": {
-
+    "react": "^0.13.3"
   }
 }
