@@ -9,7 +9,7 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 var nodeModulesDir = path.resolve(__dirname, 'node_modules');
 
 var config = {
-
+    devtool: 'eval',
     entry: {
 
         bundle :  [
@@ -25,7 +25,7 @@ var config = {
     // },
     output: {
         path: path.join(__dirname, 'build'),
-        // publicPath: '/assets/', 
+        publicPath: '/public/', 
         filename: 'js/[name].js'
     },
 

@@ -1,0 +1,17 @@
+
+
+.btn {
+  $btnbg: #ff6c8e;
+  $btnhoverbg: lighten($btnbg, 10%);
+
+  background-color: $btnbg;
+  border: 0;
+  border-radius: 5px;
+  outline: 0;
+  padding: .5em;
+
+  &:hover {
+    background-color: $btnhoverbg;
+  }
+
+}

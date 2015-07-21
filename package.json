@@ -32,6 +32,8 @@
   },
   "author": "james ",
   "dependencies": {
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "react-redux": "^0.2.2",
+    "redux": "^1.0.0-rc"
   }
 }
