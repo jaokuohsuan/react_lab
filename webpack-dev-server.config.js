@@ -36,7 +36,8 @@ var config = {
             loaders: ['react-hot', 'babel-loader'],
         }, {
             test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('css!sass')
+            // loader: ExtractTextPlugin.extract('css!sass')
+            loaders: ['style', 'css','sass']
         }, {
             test: /\.(png|jpg)$/,
             loader: 'url-loader?limit=8192'
@@ -48,10 +49,12 @@ var config = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
+
         new HtmlwebpackPlugin({
           title: 'webpack lala app',
           filename: './build/index.html'
         }),
+
         // new webpack.ProvidePlugin({
         //           $: 'jquery',
         //           jQuery: 'jquery',

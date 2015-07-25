@@ -2,9 +2,16 @@
 
 
 import React from 'react';
-import App from './App.js';
+import AppWrap from './components/AppWrap';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
+
+import * as reducers from './reducers';
+
+const composedReducers = combineReducers(reducers);
+const store = createStore(composedReducers);
+// const finalCreateStore = applyMiddleware( promiseMiddleware )(createStore);
 
 
 
-React.render(<App />, document.getElementById('app'));
+React.render(<AppWrap store={store} />, document.getElementById('app'));
 

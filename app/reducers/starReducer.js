@@ -1,20 +1,27 @@
 /*jslint esnext: true , unused:false , camelcase: false */
-import { ADD_STAR, REMOVE_SATR } from '../constants/ActionTypes';
+import { ADD_STAR, REMOVE_SATR} from '../constants/ActionTypes';
 
-const initialState = { isStar: [], idCounter: 0 };
+const initialState = [{ isStar: false, id: 0 }];
 
 export default function starReducer (state=initialState, action) {
 
     switch (action.type) {
         case ADD_STAR:
-            console.log('store add star');
-            return {
-
-            };
+            
+            return (
+                state.map( ()=>{
+                    console.log('run run')
+                })
+            );
         case REMOVE_SATR:
-            return {
+             return (
+                state.map( ()=>{
+                    console.log('run run 2')
+                })
+            );
+        
 
-            };
+            
         default:
             return state;
 

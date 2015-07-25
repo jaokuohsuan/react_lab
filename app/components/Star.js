@@ -1,25 +1,21 @@
-/*jslint esnext: true , unused:false , camelcase: false */
-import React, { Component } from 'react';
-import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
+
+import React, { Component, PropTypes } from 'react';
+// import {bindActionCreators} from "redux";
+// import {connect} from "react-redux";
+import classnames from 'classnames';
 
 import * as UserAction from "../action/UserAction";
 
-@connect(state => ({
-  starState: state.starState
-}))
+// @connect(state => ({
+  
+// }))
 export default class Star extends Component {
 
-     componentDidMount() {
-         console.info("Star component did mount.");
-     }
+     static propTypes = {
+        isStar: PropTypes.bool,
+     };
 
-     onClick() {
-          
-          const action = bindActionCreators(UserAction, this.props.dispatch);
-          action.addStar();
-          console.info("Star was clicked." ,action);
-     }
+
 
      render(){
 
@@ -39,7 +35,13 @@ export default class Star extends Component {
       
           return (
                
-                    <svg className="stars" xmlns="http://www.w3.org/svg/2000" width="60" height="60" onClick={::this.onClick}>
+                    <svg onClick={this.props.starClick}  className={
+                              classnames("stars",{
+                                   "is-selected": this.props.isStar
+                              })
+                         }
+                         width="60" height="60"
+                         xmlns="http://www.w3.org/svg/2000"  >
                          <path d={pathData} />
                     </svg>
                

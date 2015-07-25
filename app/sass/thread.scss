@@ -2,13 +2,17 @@
 $bgc: #fcfcfc;
 $star-color: #ffdf00;
 $star-empty-color: #b6b6ae;
+$thread-outline-color: #cdcdd2;
 
 .thread {
 
   background-color: $bgc;
   display: block;
+  outline: $thread-outline-color 1px dashed;
   padding: .5em 2em;
+  position: relative;
   vertical-align: middle;
+  
   
 }
 
