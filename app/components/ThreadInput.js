@@ -1,6 +1,5 @@
 /*jslint esnext: true , unused:false , camelcase: false */
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
 
 require('../sass/btn.scss');
 

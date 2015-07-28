@@ -1,4 +1,4 @@
 module.exports=[
 	{path:'/',handler:'getIndex'},
-	{path:'/:id',handler:'editOneThred'},
+	{path:'/:id',handler:'editOneThread'},
 ]

@@ -1,4 +1,4 @@
-import { ADD_STAR, REMOVE_SATR, ADD_THREAD,CHANGE_MARK,REMOVE_THREAD } from '../constants/ActionTypes';
+import { ADD_STAR, REMOVE_SATR, ADD_THREAD,CHANGE_MARK,EDIT_THREAD,SAVE_THREAD,REMOVE_THREAD,TOGGLE_LOADING,ROUTE_CHANGE} from '../constants/ActionTypes';
 
 export function addStar() {
   console.log('addStar action');
@@ -39,17 +39,37 @@ export function editThred(id,text) {
     return {
       type: EDIT_THREAD,
       id,
-      text
+      text,
     };
 }
 
-// 
-// export function addThred(text) {
-//     console.log('addThred action 2', text);
-//     return (dispatch,getState)=>{
-//         const {text}=getState();
-//         console.log('txtx=',text);
-//         // dispatch(addStar());
-//     };
-// }
+export function saveThred(id,text) {
+    return {
+      type: SAVE_THREAD,
+      id,
+      text,
+    };
+}
+
+
+//router action
+
+export function changeRoute(view,data) {
+  return {
+    type: ROUTE_CHANGE,
+    view,
+    data
+  };
+}
+
+
+export function toggleLoading( show:Boolean, msg:String ) {
+
+  return {
+    type: TOGGLE_LOADING,
+    msg,
+    show
+  };
+}
+
 

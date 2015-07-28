@@ -3,9 +3,10 @@ import { ROUTE_CHANGE,TOGGLE_LOADING } from '../constants/ActionTypes';
 import page from 'page';
 
 const initialState = {
-	currentView: 'master',
+	currentView: 'index',
 	isLoading: false,
-	loadingMsg: ''
+	loadingMsg: '',
+    data: ''
 };
 
 
@@ -14,11 +15,23 @@ export default function routeReducer (state=initialState, action) {
 	switch (action.type){
 
         case ROUTE_CHANGE:
-            return
+            console.log('action.view=',action.view);
+       
+            return {
+                ...state,
+                currentView: action.view,
+                data: action.data
+            }
 
         case TOGGLE_LOADING:
-            return
-            
+
+            return {
+                ...state,
+                loadingMsg: action.msg,
+                isLoading: action.show
+
+            }
+
         default:
             return state;
     }

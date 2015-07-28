@@ -1,4 +1,4 @@
-import { ADD_THREAD, EDIT_THREAD,CHANGE_MARK,REMOVE_THREAD } from '../constants/ActionTypes';
+import { ADD_THREAD, EDIT_THREAD,CHANGE_MARK,REMOVE_THREAD,SAVE_THREAD } from '../constants/ActionTypes';
 
 const initialState = [{
   text: 'Use Default',
@@ -28,6 +28,15 @@ export default function threadReducer (state=initialState, action) {
                        { ...thread, text: thread.text } :
                        thread
           );
+
+        case SAVE_THREAD:
+
+            return state.map(thread =>
+                     thread.id === action.id ?
+                       {...thread, text: action.text} :
+                       thread
+          );
+
         case CHANGE_MARK:
 
              return state.map(thread =>

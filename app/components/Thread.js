@@ -29,7 +29,7 @@ export default class Thread extends Component {
 		return (
 			<div className="thread">
 				<Star isStar={thread.marked} starClick={::this.handlesClick} />
-				<span onDoubleClick={::this.handleEdit} >{thread.text}</span>
+				<a className="thread-content" href={'/'+this.props.id} ><span onDoubleClick={::this.handleEdit} >{thread.text}</span> </a>
 				<a href="#" className="close-btn" onClick={::this.handleDel}>Ｘ</a>
 			</div>
 		);

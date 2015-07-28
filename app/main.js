@@ -12,6 +12,5 @@ const store = createStore(composedReducers);
 // const finalCreateStore = applyMiddleware( promiseMiddleware )(createStore);
 
 
-
 React.render(<AppWrap store={store} />, document.getElementById('app'));
 

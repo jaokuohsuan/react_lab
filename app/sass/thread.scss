@@ -3,6 +3,7 @@ $bgc: #fcfcfc;
 $star-color: #ffdf00;
 $star-empty-color: #b6b6ae;
 $thread-outline-color: #cdcdd2;
+$text-color: #777;
 
 .thread {
 
@@ -14,6 +15,13 @@ $thread-outline-color: #cdcdd2;
   vertical-align: middle;
   
   
+}
+
+.thread-content {
+  color: $text-color;
+  text-decoration: none;
+  
+
 }
 
 
