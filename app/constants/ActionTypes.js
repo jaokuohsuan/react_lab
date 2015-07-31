@@ -9,6 +9,7 @@ export const CHANGE_WORDING = 'CHANGE_WORDING';
 
 
 export const ROUTE_CHANGE = 'ROUTE_CHANGE';
+export const ROUTE_PATH = 'ROUTE_PATH';
 export const TOGGLE_LOADING = 'TOGGLE_LOADING';
 
 

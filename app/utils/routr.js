@@ -25,7 +25,7 @@ export default class Routr {
 	}
 
     getIndex(ctx){
-        console.log('index - ',ctx.path);
+        console.log('index - 123',ctx.path);
     }
 
     editOneThread(ctx) {

@@ -1,4 +1,4 @@
-import { ROUTE_CHANGE,TOGGLE_LOADING } from '../constants/ActionTypes';
+import { ROUTE_CHANGE,TOGGLE_LOADING,ROUTE_PATH } from '../constants/ActionTypes';
 
 import page from 'page';
 
@@ -16,6 +16,7 @@ export default function routeReducer (state=initialState, action) {
 
         case ROUTE_CHANGE:
             console.log('action.view=',action.view);
+            // page('/');
        
             return {
                 ...state,
@@ -29,9 +30,15 @@ export default function routeReducer (state=initialState, action) {
                 ...state,
                 loadingMsg: action.msg,
                 isLoading: action.show
-
             }
+        case ROUTE_PATH:
 
+            return {
+                ...state,
+                loadingMsg: action.msg,
+                isLoading: action.show
+            }
+        
         default:
             return state;
     }

@@ -1,7 +1,7 @@
-import { ADD_STAR, REMOVE_SATR, ADD_THREAD,CHANGE_MARK,EDIT_THREAD,SAVE_THREAD,REMOVE_THREAD,TOGGLE_LOADING,ROUTE_CHANGE} from '../constants/ActionTypes';
+import { ADD_STAR, REMOVE_SATR, ADD_THREAD,CHANGE_MARK,EDIT_THREAD,SAVE_THREAD,REMOVE_THREAD,TOGGLE_LOADING,ROUTE_CHANGE,ROUTE_PATH} from '../constants/ActionTypes';
 
 export function addStar() {
-  console.log('addStar action');
+
   return {
     type: ADD_STAR,
 
@@ -69,6 +69,14 @@ export function toggleLoading( show:Boolean, msg:String ) {
     type: TOGGLE_LOADING,
     msg,
     show
+  };
+}
+
+export function routePath(path:String, data) {
+  return {
+    type: ROUTE_PATH,
+    path,
+    data
   };
 }
 
