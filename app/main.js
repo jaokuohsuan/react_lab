@@ -4,7 +4,7 @@
 import React from 'react';
 import { devTools, persistState } from 'redux-devtools';
 import AppWrap from './components/AppWrap';
-import { applyMiddleware, createStore, combineReducers, compose} from 'redux';
+import { applyMiddleware, createStore, combineReducers,compose} from 'redux';
 
 import * as reducers from './reducers';
 

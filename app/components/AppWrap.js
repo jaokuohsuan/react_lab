@@ -10,7 +10,6 @@ import Container from './Container';
 import Routr from '../utils/routr';
 
 
-
 require('../sass/main.scss');
 
 
@@ -29,15 +28,14 @@ export default class AppWrap extends Component {
     let tool;
     if ('undefined' !== typeof window) {
       tool = <DebugPanel top right bottom>
-          <DevTools store={this.props.store} monitor={LogMonitor} />
-           </DebugPanel>
+              <DevTools store={this.props.store} monitor={LogMonitor} />
+            </DebugPanel>
     }
     return (
       <div>
         <Provider store={this.props.store}>
           {() => <Container />}
         </Provider>
-
         {tool}
       </div>
 

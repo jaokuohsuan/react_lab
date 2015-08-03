@@ -29,9 +29,9 @@ export default class Routr {
     }
 
     editOneThread(ctx) {
-        //remember ctx.params.id is String
+        //ctx.params.id : String need to transform to Number
         var id = +ctx.params.id;
-        return this.doAction('changeRoute')('editing',id)
+        return this.doAction('changeRoute')('editing',id);
         
     }
 }
