@@ -24,13 +24,14 @@ module.exports = function(config) {
 
 	// list of files / patterns to load in the browser
 	files: [
-	  'test/testSpec.js'
+	  // {pattern: '.test/tests.webpack.js', watched: false },
+	  {pattern: 'test/tests.webpack.js', watched: false },
 	],
 
 
 	// list of preprocessors
 	preprocessors: {
-	  '**/*[sS]pec.js': ['webpack']
+	  'test/tests.webpack.js': ['webpack']
 	},
 
 
@@ -50,8 +51,13 @@ module.exports = function(config) {
 		            loaders: ['style', 'css','sass']
 		        }
         	]
-		}
+		},
+		watch: true,
 	},
+
+	webpackServer: {
+      noInfo: true,
+    },
 
 
 	webpackMiddleware: {
@@ -91,7 +97,7 @@ module.exports = function(config) {
 	// - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
 	// - PhantomJS
 	// - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-	browsers: ['Chrome'],
+	browsers: ['PhantomJS'],
 
 
 	// If browser does not capture in given timeout [ms], kill it
@@ -100,7 +106,7 @@ module.exports = function(config) {
 
 	// Continuous Integration mode
 	// if true, it capture browsers, run tests and exit
-	singleRun: false,
+	singleRun: true,
 
 
 	// List plugins explicitly, since autoloading karma-webpack
@@ -109,7 +115,8 @@ module.exports = function(config) {
 		require("karma-webpack"),
 		require("karma-jasmine"),
 		require("karma-spec-reporter"),
-		require("karma-chrome-launcher"),
+		// require("karma-chrome-launcher"),
+		require("karma-phantomjs-launcher"),
 	]
   });
 };
