@@ -19,6 +19,14 @@ var config = {
         ]
     },
 
+    test: {
+        entry: __dirname + '/test/initTestSpec.js',
+        output: {
+          path: 'test/client/',
+          file: 'spec.js'
+        }
+    },
+
     // entry: {
     // 	app: path.resolve(__dirname, './assets/js/pages/statics/test.js'),
     // 	// vendors: [ 'jquery', 'bootstrap']
