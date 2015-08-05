@@ -1,6 +1,7 @@
 // Karma configuration
 
 var webpack = require("webpack");
+var RewirePlugin = require("rewire-webpack");
 
 var configSettings = {
 	"normal": {},
@@ -52,6 +53,9 @@ module.exports = function(config) {
 		        }
         	]
 		},
+		plugins: [
+    	    new RewirePlugin()
+	    ],
 		watch: true,
 	},
 

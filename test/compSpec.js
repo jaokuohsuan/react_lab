@@ -15,11 +15,12 @@ var TestUtils = React.addons.TestUtils;
 import EditPad from '../app/components/EditPad.js';
 import Star from '../app/components/Star.js';
 import ThreadInput from '../app/components/ThreadInput.js';
+import Thread from '../app/components/Thread.js';
 
 describe('components Test',function(){
 
 	
-	var editPadComp,starComp,ThreadInputComp;
+	var editPadComp,starComp,ThreadInputComp,ThreadComp;
 
 	beforeEach(function() {
 	    jasmine.clock().install();
@@ -37,6 +38,10 @@ describe('components Test',function(){
     it('Input should exists', function() {
 	   	ThreadInputComp = TestUtils.renderIntoDocument(<ThreadInput />);
 	    expect(TestUtils.isCompositeComponent(ThreadInputComp)).toBeTruthy();
+	 });
+    it('Thread should exists', function() {
+	   	ThreadComp = TestUtils.renderIntoDocument(<Thread thread={[]}/>);
+	    expect(TestUtils.isCompositeComponent(ThreadComp)).toBeTruthy();
 	 });
 
     afterEach(() => {
