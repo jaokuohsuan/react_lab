@@ -32,8 +32,13 @@ module.exports = function(config) {
 
 	// list of preprocessors
 	preprocessors: {
-	  'test/tests.webpack.js': ['webpack']
+	  'test/tests.webpack.js': ['webpack','coverage']
 	},
+
+	coverageReporter: {
+      type : 'html',
+      dir : 'test/coverage/'
+    },
 
 
 	webpack: {
@@ -73,7 +78,7 @@ module.exports = function(config) {
 
 	// test results reporter to use
 	// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-	reporters: ['spec'],
+	reporters: ['spec','coverage'],
 
 
 	// web server port
@@ -119,6 +124,7 @@ module.exports = function(config) {
 		require("karma-webpack"),
 		require("karma-jasmine"),
 		require("karma-spec-reporter"),
+		require("karma-coverage"),
 		// require("karma-chrome-launcher"),
 		require("karma-phantomjs-launcher"),
 	]
