@@ -1,0 +1,56 @@
+
+$bgc: #fcfcfc;
+$star-color: #ffdf00;
+$star-empty-color: #b6b6ae;
+$thread-outline-color: #cdcdd2;
+$text-color: #777;
+
+.thread {
+
+  background-color: $bgc;
+  display: block;
+  outline: $thread-outline-color 1px dashed;
+  padding: .5em 2em;
+  position: relative;
+  vertical-align: middle;
+  
+  
+}
+
+.thread-content {
+  color: $text-color;
+  text-decoration: none;
+  
+
+}
+
+
+.stars {
+  cursor: pointer;
+  fill: $star-empty-color;
+  vertical-align: middle;
+
+
+  &.is-selected {
+    fill: $star-color;
+  }
+}
+
+.thread-input {
+  padding: 1em;
+
+  > input {
+    
+    background: rgba(0, 0, 0, .003);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0 , .03);
+    font-size: 1.5em;
+    outline: 0;
+    padding: .5em;
+    width: 50%;
+
+  }
+
+}
+
