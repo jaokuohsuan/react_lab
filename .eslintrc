@@ -15,6 +15,7 @@
   "parse": "babel-eslint",
   "rules": {
     "no-unused-vars": [1] ,
+    no-comma-dangle: "off",
     "quotes": [2, "single"],
     "strict": [2, "never"],
     "react/jsx-uses-react": 2,

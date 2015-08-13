@@ -9,7 +9,7 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 var nodeModulesDir = path.resolve(__dirname, 'node_modules');
 
 var config = {
-
+    devtool: 'eval',
     entry: {
 
         bundle :  [
@@ -19,13 +19,21 @@ var config = {
         ]
     },
 
+    test: {
+        entry: __dirname + '/test/initTestSpec.js',
+        output: {
+          path: 'test/client/',
+          file: 'spec.js'
+        }
+    },
+
     // entry: {
     // 	app: path.resolve(__dirname, './assets/js/pages/statics/test.js'),
     // 	// vendors: [ 'jquery', 'bootstrap']
     // },
     output: {
         path: path.join(__dirname, 'build'),
-        // publicPath: '/assets/', 
+        publicPath: '/public/', 
         filename: 'js/[name].js'
     },
 
@@ -36,7 +44,8 @@ var config = {
             loaders: ['react-hot', 'babel-loader'],
         }, {
             test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('css!sass')
+            // loader: ExtractTextPlugin.extract('css!sass')
+            loaders: ['style', 'css','sass']
         }, {
             test: /\.(png|jpg)$/,
             loader: 'url-loader?limit=8192'
@@ -48,10 +57,12 @@ var config = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
+
         new HtmlwebpackPlugin({
           title: 'webpack lala app',
           filename: './build/index.html'
         }),
+
         // new webpack.ProvidePlugin({
         //           $: 'jquery',
         //           jQuery: 'jquery',

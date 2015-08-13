@@ -33,6 +33,9 @@ var config = {
             test: /\.scss$/,
             loader: ExtractTextPlugin.extract('css!sass')
         }, {
+            test: /\.css$/,
+            loader: ['style', 'raw']
+        }, {
             test: /\.(png|jpg)$/,
             loader: 'url-loader?limit=8192'
         }]
