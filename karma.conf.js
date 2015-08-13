@@ -26,13 +26,13 @@ module.exports = function(config) {
 	// list of files / patterns to load in the browser
 	files: [
 	  // {pattern: '.test/tests.webpack.js', watched: false },
-	  {pattern: 'test/tests.webpack.js', watched: false },
+	  {pattern: 'test/tests.bundle.js', watched: false },
 	],
 
 
 	// list of preprocessors
 	preprocessors: {
-	  'test/tests.webpack.js': ['webpack','coverage']
+	  'test/tests.bundle.js': ['webpack','coverage']
 	},
 
 	coverageReporter: {
@@ -64,12 +64,9 @@ module.exports = function(config) {
 		watch: true,
 	},
 
-	webpackServer: {
-      noInfo: true,
-    },
-
 
 	webpackMiddleware: {
+		noInfo: true,
 		stats: {
 			colors: true
 		}

@@ -25,3 +25,4 @@ require('core-js/es5');
 // var context = require.context('./src', true, /-test\.js?$/);
 var context = require.context('./', true, /(s|S)pec\.js?$/);
 context.keys().forEach(context);
+module.exports = context;
