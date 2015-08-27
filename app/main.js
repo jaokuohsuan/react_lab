@@ -1,6 +1,6 @@
 /*jslint node: true , esnext: true , unused:false , camelcase: false */
 
-
+import 'babel-core/polyfill';
 import React from 'react';
 import { devTools, persistState } from 'redux-devtools';
 import AppWrap from './components/AppWrap';
