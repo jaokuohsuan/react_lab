@@ -44,7 +44,8 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack-dev-server.config.js  --hot --devtool eval-source  --progress --colors --content-base build",
     "dev": "node dev",
-    "deploy": "webpack -p --config webpack-deploy.config.js"
+    "deploy": "webpack -p --config webpack-deploy.config.js",
+    "e2e": "./nightwatch"
   },
   "author": "james ",
   "dependencies": {
