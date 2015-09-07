@@ -1,4 +1,4 @@
-import { ADD_STAR, REMOVE_SATR, ADD_THREAD,CHANGE_MARK,EDIT_THREAD,SAVE_THREAD,REMOVE_THREAD,TOGGLE_LOADING,ROUTE_CHANGE,ROUTE_PATH} from '../constants/ActionTypes';
+import { ADD_STAR, REMOVE_SATR, ADD_THREAD,CHANGE_MARK,EDIT_THREAD,SAVE_THREAD,REMOVE_THREAD,TOGGLE_LOADING,ROUTE_CHANGE,ROUTE_PATH,EDIT_PASSWORD,MASK_PASSWORD} from '../constants/ActionTypes';
 
 export function addStar() {
 
@@ -78,6 +78,21 @@ export function routePath(path:String, data) {
     path,
     data
   };
+}
+
+export function editPassword(text){
+  return{
+    type:EDIT_PASSWORD,
+    text
+  };
+
+}
+
+export function maskPassword(){
+  return{
+    type:MASK_PASSWORD,
+  };
+
 }
 
 

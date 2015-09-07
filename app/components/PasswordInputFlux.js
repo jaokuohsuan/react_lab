@@ -2,11 +2,13 @@
 
 import React, {Component, PropTypes} from 'react';
 import classnames from 'classnames';
-import zxcvbn from 'zxcvbn';
+// import zxcvbn from 'zxcvbn';
+
+import * as UserAction from "../action/UserAction";
 
 require('../sass/password-input.scss');
 
-export default class PasswordInput extends Component {
+export default class PasswordInputFlux extends Component {
 
     static propTypes = {
         text: PropTypes.string,
@@ -15,31 +17,26 @@ export default class PasswordInput extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            text: this.props.text || '',
-            isPassword: true,
+            text: this.props.text || ''
         };
     }
 
-    maskPassword() {
+    delayMaskPassword() {
+        console.log('delayMaskPassword');
+        const {maskPassword} =this.props;
         clearTimeout(this.timeoutID);
-        this.timeoutID = setTimeout((function(){
-            this.setState({
-                isPassword: true,
-            });
-        }).bind(this), 1500);
+        this.timeoutID = setTimeout(maskPassword, 1500);
     }
 
-    handleChange(e) {
 
-        var score,
-            val = e.target.value;
+    handleChange(e) {
+        const {editPassword,maskPassword} =this.props;
+        let val=e.target.value;
+        this.setState({ text: val });
+        editPassword(val);
+        this.delayMaskPassword();
         e.preventDefault();
-        this.setState({
-            text: val,
-            score: zxcvbn(val).score,
-            isPassword: false
-        });
-        this.maskPassword();
+        // this.maskPassword();
     }
 
 
@@ -52,7 +49,7 @@ export default class PasswordInput extends Component {
                 <br / >
                 <input 
                     value = {this.state.text}
-                    type = {this.state.isPassword ? 'password' : 'text'}
+                    type = {this.props.isPassword ? 'password' : 'text'}
                     onChange = {::this.handleChange}
                     value = {this.state.text} />
                 <div className="scorebar">

@@ -8,6 +8,7 @@ export const SAVE_THREAD = 'SAVE_THREAD';
 export const CHANGE_WORDING = 'CHANGE_WORDING';
 
 export const EDIT_PASSWORD = 'EDIT_PASSWORD';
+export const MASK_PASSWORD = 'MASK_PASSWORD';
 
 export const ROUTE_CHANGE = 'ROUTE_CHANGE';
 export const ROUTE_PATH = 'ROUTE_PATH';
