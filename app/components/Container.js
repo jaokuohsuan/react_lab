@@ -7,6 +7,7 @@ import * as UserAction from "../action/UserAction";
 import Thread from './Thread';
 import ThreadInput from './ThreadInput';
 import EditPad from './EditPad';
+import PasswordInput from './PasswordInput';
 
 @connect(state => ({
   threads: state.threadReducer,
@@ -26,6 +27,7 @@ export default class Container extends Component {
 
         return (
           <div>
+            <PasswordInput />
             <h1>todo list...</h1>
             <div>
                 <ThreadInput 

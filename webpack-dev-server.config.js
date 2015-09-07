@@ -55,6 +55,9 @@ var config = {
         new ExtractTextPlugin('build/style/style.css', {
             allChunks: true
         }),
+        new webpack.ResolverPlugin(
+            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+        ),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
 
@@ -72,7 +75,7 @@ var config = {
 
     ],
     resolve: {
-        root: path.resolve(''),
+        root:  [path.resolve(''),path.join(__dirname, "bower_components"),path.join(__dirname, "node_modules")],
         extensions: ['', '.js', '.json'],
         // alias: {
         //           jquery:path.resolve(__dirname, './assets/vendor/jquery/dist/jquery.min.js')

@@ -12,7 +12,6 @@ require('../sass/btn.scss');
 export default class EditPad extends Component {
 
 	componentWillReceiveProps(nextProps){
-		console.log("nextProps=",nextProps);
 		this.setState({
 			text: nextProps.text
 		})
